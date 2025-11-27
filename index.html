@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechMarket - Премиум магазин электроники</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="loader">
+            <div class="loader-icon">🛒</div>
+            <p>Загрузка TechMarket...</p>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo" onclick="showHome()">
+                <h1>🚀 TechMarket</h1>
+                <p>Премиум электроника с доставкой</p>
+            </div>
+            <div class="header-controls">
+                <div class="search-box">
+                    <input type="text" placeholder="Найти смартфон, ноутбук..." id="searchInput">
+                    <button onclick="searchProducts()">🔍 Поиск</button>
+                </div>
+                <div class="header-buttons">
+                    <button class="wishlist-btn" onclick="toggleWishlist()">
+                        ❤️ Избранное
+                        <span class="wishlist-count" id="wishlistCount">0</span>
+                    </button>
+                    <div class="cart-header" id="cartIcon">
+                        <span class="cart-icon">🛍️ Корзина</span>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navigation">
+        <div class="container">
+            <div class="nav-links">
+                <a href="#heroSection" class="nav-link active">🏠 Главная</a>
+                <a href="#productsSection" class="nav-link" onclick="filterByCategory('smartphones')">📱 Смартфоны</a>
+                <a href="#productsSection" class="nav-link" onclick="filterByCategory('laptops')">💻 Ноутбуки</a>
+                <a href="#productsSection" class="nav-link" onclick="filterByCategory('audio')">🎧 Аудио</a>
+                <a href="#productsSection" class="nav-link" onclick="filterByCategory('tablets')">📟 Планшеты</a>
+                <a href="#productsSection" class="nav-link" onclick="filterByCategory('wearables')">⌚ Гаджеты</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero" id="heroSection">
+                <div class="hero-content">
+                    <h2 class="hero-title">Техника <span class="highlight">будущего</span> уже сегодня</h2>
+                    <p class="hero-subtitle">Откройте мир инноваций с нашей премиум электроникой</p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Товаров</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">10k+</span>
+                            <span class="stat-label">Довольных клиентов</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Поддержка</span>
+                        </div>
+                    </div>
+                    <button class="cta-button" onclick="scrollToProducts()">
+                        🎯 Начать покупки
+                    </button>
+                </div>
+                <div class="hero-visual">
+                    <div class="floating-products">
+                        <div class="floating-product" style="--delay: 0s">📱</div>
+                        <div class="floating-product" style="--delay: 1s">💻</div>
+                        <div class="floating-product" style="--delay: 2s">🎧</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Special Offers -->
+            <section class="special-offers" id="specialOffers">
+                <h3>🔥 Горящие предложения</h3>
+                <div class="offers-grid">
+                    <div class="offer-card premium" onclick="addToCart(1)">
+                        <div class="offer-badge">PREMIUM</div>
+                        <h4>Apple Tech Pack</h4>
+                        <p>iPhone 15 Pro + AirPods Pro + Apple Watch</p>
+                        <div class="offer-price">199 990 Т</div>
+                        <div class="offer-old-price">249 990 Т</div>
+                    </div>
+                    <div class="offer-card" onclick="addToCart(3)">
+                        <div class="offer-badge">-30%</div>
+                        <h4>Gaming Bundle</h4>
+                        <p>Игровой ноутбук + мышь + клавиатура</p>
+                        <div class="offer-price">89 990 Т</div>
+                        <div class="offer-old-price">127 990 Т</div>
+                    </div>
+                    <div class="offer-card" onclick="addToCart(5)">
+                        <div class="offer-badge">NEW</div>
+                        <h4>Audio Set</h4>
+                        <p>Наушники + колонка + усилитель</p>
+                        <div class="offer-price">45 990 Т</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Products Section -->
+            <section class="products-section" id="productsSection">
+                <div class="section-header">
+                    <h3>🎯 Каталог товаров</h3>
+                    <div class="view-controls">
+                        <button class="view-btn active" onclick="setViewMode('grid')">◼️ Сетка</button>
+                        <button class="view-btn" onclick="setViewMode('list')">📋 Список</button>
+                    </div>
+                </div>
+
+                <div class="filters-panel">
+                    <div class="filter-group">
+                        <label>Сортировка:</label>
+                        <select id="sortSelect" onchange="sortProducts()">
+                            <option value="default">По умолчанию</option>
+                            <option value="price_asc">Цена (дешевые first)</option>
+                            <option value="price_desc">Цена (дорогие first)</option>
+                            <option value="name">По названию</option>
+                            <option value="rating">По рейтингу</option>
+                            <option value="popular">Популярные</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Цена:</label>
+                        <input type="number" id="minPrice" placeholder="от" onchange="applyPriceFilter()">
+                        <input type="number" id="maxPrice" placeholder="до" onchange="applyPriceFilter()">
+                    </div>
+                    <div class="filter-group">
+                        <label>
+                            <input type="checkbox" id="inStockOnly" onchange="toggleStockFilter()">
+                            ✅ В наличии
+                        </label>
+                        <label>
+                            <input type="checkbox" id="discountOnly" onchange="toggleDiscountFilter()">
+                            🔥 Со скидкой
+                        </label>
+                        <label>
+                            <input type="checkbox" id="fastDelivery" onchange="toggleDeliveryFilter()">
+                            🚚 Быстрая доставка
+                        </label>
+                    </div>
+                    <button class="clear-filters" onclick="clearFilters()">
+                        🗑️ Очистить фильтры
+                    </button>
+                </div>
+
+                <div class="products-container" id="productsContainer">
+                    <div class="products-grid" id="products">
+                        <!-- Товары загружаются через JS -->
+                    </div>
+                </div>
+
+                <div class="load-more-container">
+                    <button class="load-more-btn" onclick="loadMore()" id="loadMoreBtn">
+                        📥 Загрузить еще
+                    </button>
+                </div>
+            </section>
+
+            <!-- Features -->
+            <section class="features">
+                <h3>💎 Почему выбирают нас?</h3>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🚀</div>
+                        <h4>Быстрая доставка</h4>
+                        <p>Доставим за 1-2 дня по всему Казахстану</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h4>Гарантия 2 года</h4>
+                        <p>Официальная гарантия на всю технику</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💳</div>
+                        <h4>Рассрочка 0%</h4>
+                        <p>Покупка в рассрочку без переплат</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎁</div>
+                        <h4>Подарки к покупке</h4>
+                        <p>Чехлы, защитные стекла и аксессуары</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Модальные окна -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🛒 Ваша корзина</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body" id="cartItems">
+                <!-- Товары в корзине -->
+            </div>
+            <div class="modal-footer">
+                <div class="cart-summary">
+                    <div class="cart-total">
+                        Итого: <span id="totalPrice">0</span> тенге.
+                    </div>
+                    <div class="cart-savings" id="cartSavings" style="display: none;">
+                        Экономия: <span id="savingsAmount">0</span> тенге.
+                    </div>
+                    <div class="delivery-options">
+                        <label>
+                            <input type="radio" name="delivery" value="standard" checked>
+                            🚚 Стандартная доставка (бесплатно)
+                        </label>
+                        <label>
+                            <input type="radio" name="delivery" value="express">
+                            ⚡ Экспресс доставка (+500 Т)
+                        </label>
+                    </div>
+                </div>
+                <button class="checkout-btn" id="checkoutBtn">
+                    💳 Перейти к оформлению
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="wishlistModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>❤️ Избранное</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body" id="wishlistItems">
+                <!-- Избранные товары -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Уведомления -->
+    <div id="notification" class="notification"></div>
+
+    <!-- Чат поддержки -->
+    <div class="support-chat" onclick="toggleSupportChat()">
+        💬 Поддержка
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>🚀 TechMarket</h4>
+                    <p>Лидер в продаже электроники с 2025 года. Качество, надежность и лучший сервис.</p>
+                    <div class="social-links">
+                        <span class="social-link">📘 VK</span>
+                        <span class="social-link">📷 Instagram</span>
+                        <span class="social-link">🐦 Twitter</span>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>👥 Наша команда</h4>
+                    <p><strong>Артём Скиба</strong> - Team Lead & Project Manager & Backend</p>
+                    <p><strong>Динис Циулин</strong> - Frontend Developer & UI/UX</p>
+                    <p><strong>Глеб Малашевский</strong> - QA Engineer & Analytics</p>
+                </div>
+                <div class="footer-section">
+                    <h4>📊 Статистика проекта</h4>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-value" id="totalProducts">0</span>
+                            <span class="stat-label">Товаров</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="totalOrders">0</span>
+                            <span class="stat-label">Заказов</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="totalUsers">1.2k</span>
+                            <span class="stat-label">Пользователей</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">98%</span>
+                            <span class="stat-label">Довольных клиентов</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>🏆 Достижения</h4>
+                    <ul class="achievements">
+                        <li>✅ Полностью адаптивный дизайн</li>
+                        <li>✅ PWA готовность</li>
+                        <li>✅ SEO оптимизация</li>
+                        <li>✅ 95+ баллов PageSpeed</li>
+                        <li>✅ Offline режим</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="project-info">
+                <h4>📈 Отчет о разработке</h4>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-date">Недели 1-2</span>
+                        <span class="timeline-desc">Базовая структура и верстка</span>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-date">Недели 3-4</span>
+                        <span class="timeline-desc">Корзина и базовый функционал</span>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-date">Недели 5-6</span>
+                        <span class="timeline-desc">Фильтры, поиск, скидки</span>
+                    </div>
+                    <div class="timeline-item current">
+                        <span class="timeline-date">Недели 7-8</span>
+                        <span class="timeline-desc">Анимации, PWA, оптимизация</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 TechMarket. Все права защищены. FLEXX | Проект разработан в учебных целях</p>
+                <p class="tech-stack">
+                    <strong>Технологии:</strong> HTML5, CSS3, JavaScript (ES6+), LocalStorage, PWA
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="wishlist.js"></script>
+    <script src="cart.js"></script>
+    <script src="products.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
