@@ -3,8 +3,8 @@ const products = [
     {
         id: 1,
         name: "iPhone 15 Pro Max",
-        price: 129990,
-        discountPrice: 119990,
+        price: 849990,
+        discountPrice: 799990,
         category: "smartphones",
         description: "Флагманский смартфон Apple с титановым корпусом и продвинутой камерной системой",
         specs: ["6.7'' Super Retina XDR", "1TB Память", "Титановый корпус", "48 Мп основная камера", "A17 Pro chip"],
@@ -18,7 +18,7 @@ const products = [
     {
         id: 2,
         name: "Samsung Galaxy S24 Ultra",
-        price: 99990,
+        price: 749990,
         category: "smartphones",
         description: "Мощный смартфон с AI-функциями и S-Pen для максимальной продуктивности",
         specs: ["6.8'' Dynamic AMOLED 2X", "512 ГБ", "S-Pen", "200 Мп камера", "Snapdragon 8 Gen 3"],
@@ -32,8 +32,8 @@ const products = [
     {
         id: 3,
         name: "MacBook Pro 16'' M3 Max",
-        price: 299990,
-        discountPrice: 279990,
+        price: 1899990,
+        discountPrice: 1799990,
         category: "laptops",
         description: "Профессиональный ноутбук для творчества и разработки с чипом Apple M3 Max",
         specs: ["16.2'' Liquid Retina XDR", "M3 Max 16-core", "48GB RAM", "1TB SSD", "120Hz ProMotion"],
@@ -47,7 +47,7 @@ const products = [
     {
         id: 4,
         name: "ASUS ROG Strix SCAR 18",
-        price: 249990,
+        price: 1499990,
         category: "laptops",
         description: "Экстремальный игровой ноутбук с топовой видеокартой и процессором Intel",
         specs: ["18'' QHD+ 240Hz", "Intel Core i9-14900HX", "RTX 4090", "64GB DDR5", "2TB NVMe"],
@@ -61,8 +61,8 @@ const products = [
     {
         id: 5,
         name: "Sony WH-1000XM5",
-        price: 34990,
-        discountPrice: 29990,
+        price: 149990,
+        discountPrice: 129990,
         category: "audio",
         description: "Беспроводные наушники с продвинутым шумоподавлением и премиум звуком",
         specs: ["Активное шумоподавление", "30 часов работы", "Touch управление", "Hi-Res Audio", "Быстрая зарядка"],
@@ -76,7 +76,7 @@ const products = [
     {
         id: 6,
         name: "Apple AirPods Pro 2",
-        price: 24990,
+        price: 89990,
         category: "audio",
         description: "Продвинутые наушники с пространственным аудио и улучшенным шумоподавлением",
         specs: ["Пространственное аудио", "Активное шумоподавление", "6ч работы", "MagSafe чехол", "Управление жестами"],
@@ -90,8 +90,8 @@ const products = [
     {
         id: 7,
         name: "iPad Pro 12.9'' M2",
-        price: 109990,
-        discountPrice: 99990,
+        price: 749990,
+        discountPrice: 699990,
         category: "tablets",
         description: "Мощный планшет для профессионалов с дисплеем Liquid Retina XDR",
         specs: ["12.9'' Liquid Retina XDR", "Apple M2 chip", "2TB Память", "5G", "Apple Pencil 2"],
@@ -105,7 +105,7 @@ const products = [
     {
         id: 8,
         name: "Samsung Galaxy Tab S9 Ultra",
-        price: 89990,
+        price: 649990,
         category: "tablets",
         description: "Флагманский планшет с огромным экраном и S-Pen в комплекте",
         specs: ["14.6'' Dynamic AMOLED 2X", "Snapdragon 8 Gen 2", "12GB RAM", "512GB", "S-Pen включен"],
@@ -119,8 +119,8 @@ const products = [
     {
         id: 9,
         name: "Apple Watch Series 9",
-        price: 41990,
-        discountPrice: 37990,
+        price: 249990,
+        discountPrice: 229990,
         category: "wearables",
         description: "Умные часы с продвинутыми функциями здоровья и новым чипом S9",
         specs: ["45mm Retina display", "S9 SiP", "ECG", "SpO2", "Always-On display"],
@@ -134,7 +134,7 @@ const products = [
     {
         id: 10,
         name: "Samsung Galaxy Watch 6 Classic",
-        price: 35990,
+        price: 149990,
         category: "wearables",
         description: "Премиум умные часы с вращающимся безелем и полным мониторингом здоровья",
         specs: ["47mm Super AMOLED", "Exynos W930", "ECG", "BIA", "Rotating bezel"],
@@ -148,7 +148,7 @@ const products = [
     {
         id: 11,
         name: "PlayStation 5 Pro",
-        price: 59990,
+        price: 349990,
         category: "gaming",
         description: "Новейшая игровая консоль с поддержкой 8K и трассировкой лучей",
         specs: ["8K Gaming", "Ray Tracing", "1TB SSD", "120fps", "Backward compatibility"],
@@ -162,8 +162,8 @@ const products = [
     {
         id: 12,
         name: "Xbox Series X",
-        price: 49990,
-        discountPrice: 44990,
+        price: 299990,
+        discountPrice: 279990,
         category: "gaming",
         description: "Мощная игровая консоль с Game Pass и поддержкой 4K 120fps",
         specs: ["4K 120fps", "1TB SSD", "Game Pass", "Quick Resume", "Backward compatibility"],

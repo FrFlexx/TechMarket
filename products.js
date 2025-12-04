@@ -89,12 +89,12 @@ class ProductManager {
                         <button class="add-to-cart-btn ${!product.inStock ? 'disabled' : ''}" 
                                 onclick="addToCart(${product.id})"
                                 ${!product.inStock ? 'disabled' : ''}>
-                            ${product.inStock ? '🛒 В корзину' : 'Нет в наличии'}
+                            ${product.inStock ? ' В корзину' : 'Нет в наличии'}
                         </button>
                         <button class="buy-now-btn ${!product.inStock ? 'disabled' : ''}"
                                 onclick="buyNow(${product.id})"
                                 ${!product.inStock ? 'disabled' : ''}>
-                            ⚡ Купить сейчас
+                            Купить сейчас
                         </button>
                     </div>
                 </div>

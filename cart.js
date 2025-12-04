@@ -267,19 +267,24 @@ class CartManager {
         }, 300);
     }
 
-    getEmptyCartHTML() {
-        return `
-            <div class="empty-cart">
-                <div style="font-size: 4rem; margin-bottom: 1rem;">😔</div>
-                <h3>Корзина пуста</h3>
-                <p>Добавьте товары из каталога, чтобы сделать заказ</p>
-                <button class="cta-button" onclick="document.getElementById('cartModal').style.display='none'; scrollToProducts();" 
-                        style="margin-top: 1rem;">
-                    🎯 Перейти к покупкам
-                </button>
-            </div>
-        `;
-    }
+   getEmptyCartHTML() {
+    return `
+        <div class="empty-cart" style="text-align: center;">
+            <div style="font-size: 4rem; margin-bottom: 1rem;">😔</div>
+            <h3>Корзина пуста</h3>
+            <p>Добавьте товары из каталога, чтобы сделать заказ</p>
+            <button class="cta-button" onclick="document.getElementById('cartModal').style.display='none'; scrollToProducts();" 
+                    style="
+                        margin-top: 1rem;
+                        padding: 0.8rem 2rem;
+                        font-size: 1rem;
+                        transform: translateX(-5%);
+                    ">
+                🎯 Перейти к покупкам
+            </button>
+        </div>
+    `;
+}
 
     updateStats() {
         const totalProducts = document.getElementById('totalProducts');

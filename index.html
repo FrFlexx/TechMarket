@@ -43,12 +43,12 @@
     <nav class="navigation">
         <div class="container">
             <div class="nav-links">
-                <a href="#heroSection" class="nav-link active">🏠 Главная</a>
-                <a href="#productsSection" class="nav-link" onclick="filterByCategory('smartphones')">📱 Смартфоны</a>
-                <a href="#productsSection" class="nav-link" onclick="filterByCategory('laptops')">💻 Ноутбуки</a>
-                <a href="#productsSection" class="nav-link" onclick="filterByCategory('audio')">🎧 Аудио</a>
-                <a href="#productsSection" class="nav-link" onclick="filterByCategory('tablets')">📟 Планшеты</a>
-                <a href="#productsSection" class="nav-link" onclick="filterByCategory('wearables')">⌚ Гаджеты</a>
+                <a href="#heroSection" class="nav-link active">Главная</a>
+                <a href="#productsSection" class="nav-link" onclick="filterByCategory('smartphones')">Смартфоны</a>
+                <a href="#productsSection" class="nav-link" onclick="filterByCategory('laptops')">Ноутбуки</a>
+                <a href="#productsSection" class="nav-link" onclick="filterByCategory('audio')">Аудио</a>
+                <a href="#productsSection" class="nav-link" onclick="filterByCategory('tablets')">Планшеты</a>
+                <a href="#productsSection" class="nav-link" onclick="filterByCategory('wearables')">Гаджеты</a>
             </div>
         </div>
     </nav>
@@ -75,14 +75,20 @@
                         </div>
                     </div>
                     <button class="cta-button" onclick="scrollToProducts()">
-                        🎯 Начать покупки
+                         Начать покупки
                     </button>
                 </div>
                 <div class="hero-visual">
                     <div class="floating-products">
-                        <div class="floating-product" style="--delay: 0s">📱</div>
-                        <div class="floating-product" style="--delay: 1s">💻</div>
-                        <div class="floating-product" style="--delay: 2s">🎧</div>
+                        <div class="floating-product" style="--delay: 0s">
+                            <img src="https://cdn.discordapp.com/attachments/1437482612171079730/1446092435825360976/makbok.png?ex=6932ba07&is=69316887&hm=81f30cd099592390924e726438589244b9f86edf212bd5004f037a6867cfe253&" alt="Смартфон" class="floating-image" onerror="this.onerror=null; this.style.display='none'; this.parentElement.innerHTML='📱';">
+                        </div>
+                        <div class="floating-product" style="--delay: 1s">
+                            <img src="https://cdn.discordapp.com/attachments/1437482612171079730/1446097711198896168/22.png?ex=6932bef1&is=69316d71&hm=c5df751e4b009ec393454a8f3d006658bbad6bad3f17d0a2eef6c55bba6513d6&" alt="Ноутбук" class="floating-image" onerror="this.onerror=null; this.style.display='none'; this.parentElement.innerHTML='💻';">
+                        </div>
+                        <div class="floating-product" style="--delay: 2s">
+                            <img src="https://cdn.discordapp.com/attachments/1437482612171079730/1446100574125822012/iphone.png?ex=6932c19c&is=6931701c&hm=99348ac6d906a1cc5e64e1e111a08dfe06f1eb9ca9f552fa5cc406fac41acb32&" alt="Наушники" class="floating-image" onerror="this.onerror=null; this.style.display='none'; this.parentElement.innerHTML='🎧';">
+                        </div>
                     </div>
                 </div>
             </section>
@@ -95,21 +101,21 @@
                         <div class="offer-badge">PREMIUM</div>
                         <h4>Apple Tech Pack</h4>
                         <p>iPhone 15 Pro + AirPods Pro + Apple Watch</p>
-                        <div class="offer-price">199 990 Т</div>
-                        <div class="offer-old-price">249 990 Т</div>
+                        <div class="offer-price">849 990 Т</div>
+                        <div class="offer-old-price">900 090 Т</div>
                     </div>
                     <div class="offer-card" onclick="addToCart(3)">
                         <div class="offer-badge">-30%</div>
                         <h4>Gaming Bundle</h4>
                         <p>Игровой ноутбук + мышь + клавиатура</p>
-                        <div class="offer-price">89 990 Т</div>
-                        <div class="offer-old-price">127 990 Т</div>
+                        <div class="offer-price">315 000 Т</div>
+                        <div class="offer-old-price">449 999 Т</div>
                     </div>
                     <div class="offer-card" onclick="addToCart(5)">
                         <div class="offer-badge">NEW</div>
                         <h4>Audio Set</h4>
                         <p>Наушники + колонка + усилитель</p>
-                        <div class="offer-price">45 990 Т</div>
+                        <div class="offer-price">499 990 Т</div>
                     </div>
                 </div>
             </section>
@@ -156,7 +162,7 @@
                         </label>
                     </div>
                     <button class="clear-filters" onclick="clearFilters()">
-                        🗑️ Очистить фильтры
+                        Очистить фильтры
                     </button>
                 </div>
 
@@ -273,7 +279,7 @@
                 <div class="footer-section">
                     <h4>👥 Наша команда</h4>
                     <p><strong>Артём Скиба</strong> - Team Lead & Project Manager & Backend</p>
-                    <p><strong>Денис Циулин</strong> - Frontend Developer & UI/UX</p>
+                    <p><strong>Динис Циулин</strong> - Frontend Developer & UI/UX</p>
                     <p><strong>Глеб Малашевский</strong> - QA Engineer & Analytics</p>
                 </div>
                 <div class="footer-section">
@@ -346,5 +352,4 @@
     <script src="products.js"></script>
     <script src="app.js"></script>
 </body>
-
 </html>
